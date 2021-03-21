@@ -1,5 +1,5 @@
 # pyShaker
-An easy to use library for encrypting, decrypting and signing data. It can also be used to establish an RSA/AES handshake.
+pyShaker is an easy to use library that does all encrypting and handshaking related matters for you. It all comes knit together in a neat package with easy to understand and self explanatory features.
 
 ## Installing
 Download with ![git](https://git-scm.com/).
@@ -10,17 +10,24 @@ Download with ![git](https://git-scm.com/).
 _Client doing a handshake with a server_:
 
 ```
->>> from pyShaker import *        # Import shaker library
-[ Code for connecting to server ]
->>> shaker = SetupShaker(sock)    # Setup the shaker object
->>> shaker.shake()                # Initate a handshake 
+>>> from pyShaker import * # Import shaker library
+>>> import socket          # Import socket library
+>>> 
+>>> shaker = pyShaker.SetupShaker("10.10.10.10",8888) # Setup the shaker object
+                                                  # This single command connects and exchanges encryption keys with the server.
 1
->>> shaker.send("testing")        # Send encrypted message to the server
+>>> shaker.send("testing") # Send encrypted message to the server
 1
+>>> shaker.close() # Close connection to server
 ```
 
 ## Documentation
+_Default RSA encryption strength is set at 1024_
 
+```SetupShaker(ip,port)``` - Returns shaker object and connects to server through TCP.
+```send(data)``` - Sends and encrypts data.
+```receive(size)``` - Receives and decrypts data.
+```close()``` - Close session and disconnect from the server.
 
 ## Contributing
 I would be more than happy to accpet contributions. These can come in the form of bug reports, feature requests and pure code!
