@@ -25,8 +25,11 @@ _Client doing a handshake with a server_:
 _Default RSA encryption strength is set at 1024_
 
 ```SetupShaker(ip,port)``` - Returns shaker object and connects to server through TCP.
+
 ```send(data)``` - Sends and encrypts data.
+
 ```receive(size)``` - Receives and decrypts data.
+
 ```close()``` - Close session and disconnect from the server.
 
 ## Contributing
