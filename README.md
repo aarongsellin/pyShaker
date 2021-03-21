@@ -1,5 +1,5 @@
 # pyShaker
-pyShaker is an easy to use library that does all encrypting and handshaking related matters for you. It all comes knit together in a neat package with easy to understand and self explanatory features.
+pyShaker is an easy to use library that sets up an encrypted tunnel for sending and receiving data between two endpoints. 
 
 ## Installing
 Download with ![git](https://git-scm.com/).
@@ -14,7 +14,7 @@ _Client doing a handshake with a server_:
 >>> import socket          # Import socket library
 >>> 
 >>> shaker = pyShaker.SetupShaker("10.10.10.10",8888) # Setup the shaker object
-                                                  # This single command connects and exchanges encryption keys with the server.
+                                                      # This single command connects and exchanges encryption keys with the server.
 1
 >>> shaker.send("testing") # Send encrypted message to the server
 1
