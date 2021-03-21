@@ -13,8 +13,7 @@ _Client doing a handshake with a server_:
 >>> from pyShaker import * # Import shaker library
 >>> import socket          # Import socket library
 >>> 
->>> shaker = pyShaker.SetupShaker("10.10.10.10",8888) # Setup the shaker object
-                                                      # This single command connects and exchanges encryption keys with the server.
+>>> shaker = pyShaker.SetupShaker("10.10.10.10",8888) # Setup the shaker object, this acts as the tunnel for our data.
 1
 >>> shaker.send("testing") # Send encrypted message to the server
 1
